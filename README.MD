@@ -28,7 +28,7 @@ Antes de iniciar, certifique-se de ter instalado:
 ### Passos para execução
 1. Clone este repositório:
    ```sh
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/harcyldowinkelmann/biblioteca-digital.git
    ```
 2. Acesse a pasta do projeto:
    ```sh
@@ -51,12 +51,9 @@ Antes de iniciar, certifique-se de ter instalado:
    npm run serve
    ```
 
-## 📄 Licença
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ## 📩 Contato
 Caso tenha dúvidas ou sugestões, entre em contato pelos e-mails: **harcyldo.winkelmann060@academico.ufgd.edu.br** | **gabriel.melo031@academico.ufgd.edu.br**.
 
 ---
 
-✨ Desenvolvido para a disciplina de **Projeto de Sistemas Computacionais**.
+✨ Desenvolvido para a disciplina de **Projeto de Sistemas Computacionais II**.
