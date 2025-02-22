@@ -16,7 +16,7 @@ A Biblioteca Digital tem como objetivo fornecer acesso a materiais educacionais 
 - **Frontend:** Vue.js
 - **Backend:** API RESTful utilizando a linguagem Golang
 - **Banco de Dados:** PostgreSQL
-- **Armazenamento de Arquivos:** Firebase/AWS S3 (ou outra solução escolhida)
+- **Armazenamento de Arquivos:** Firebase/AWS S3
 
 ## 🚀 Como Rodar o Projeto
 ### Pré-requisitos
