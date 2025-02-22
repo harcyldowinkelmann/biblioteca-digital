@@ -14,7 +14,7 @@ A Biblioteca Digital tem como objetivo fornecer acesso a materiais educacionais 
 
 ## 🛠️ Tecnologias Utilizadas
 - **Frontend:** Vue.js
-- **Backend:** API RestFul utilizando a linguagem Golang
+- **Backend:** API RESTful utilizando a linguagem Golang
 - **Banco de Dados:** PostgreSQL
 - **Armazenamento de Arquivos:** Firebase/AWS S3 (ou outra solução escolhida)
 
