@@ -1,0 +1,39 @@
+version: '3.8'
+
+networks:
+  app_network:
+    driver: bridge
+
+services:
+  api:
+    container_name: 'api_golang'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/api_golang
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    networks:
+      - app_network
+
+  postgres:
+    image: postgres:16
+    container_name: 'postgres_api'
+    environment:
+      POSTGRES_USER: golang
+      POSTGRES_PASSWORD: golang
+      POSTGRES_DB: golang
+      POSTGRES_HOST_AUTH_METHOD: md5
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database.sql:/docker-entrypoint-initdb.d/database.sql
+    ports:
+      - "5433:5432"
+    networks:
+      - app_network
+
+volumes:
+  postgres_data:
