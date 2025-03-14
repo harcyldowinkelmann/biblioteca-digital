@@ -1,6 +1,6 @@
-# Exemplo API Golang com Echo Framework (PostgreSQL)
+# API Golang com Echo Framework (PostgreSQL) - Biblioteca Digital
 
-Este guia detalha como configurar o ambiente para desenvolvimento utilizando [Go](https://golang.org/) e [Air](https://github.com/cosmtrek/air), uma ferramenta de live reload para aplicações Go.
+Este guia detalha como configurar o ambiente para desenvolvimento da API do projeto Biblioteca Digital utilizando [Go](https://golang.org/) e [Air](https://github.com/cosmtrek/air), uma ferramenta de live reload para aplicações Go.
 
 ## Pré-requisitos
 
