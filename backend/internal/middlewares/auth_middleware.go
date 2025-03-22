@@ -3,7 +3,7 @@ package middlewares
 import (
 	"biblioteca-digital/pkg/hashing"
 	"biblioteca-digital/pkg/mapear/constants"
-	"biblioteca-digital/pkg/mapear/response"
+	"biblioteca-digital/pkg/mapear/responses"
 	"net/http"
 
 	echojwt "github.com/labstack/echo-jwt/v4"

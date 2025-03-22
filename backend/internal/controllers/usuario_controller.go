@@ -6,7 +6,7 @@ import (
 	"biblioteca-digital/internal/services"
 	"biblioteca-digital/pkg/mapear/constants"
 	"biblioteca-digital/pkg/mapear/request"
-	"biblioteca-digital/pkg/mapear/response"
+	"biblioteca-digital/pkg/mapear/responses"
 	"net/http"
 	"strconv"
 
