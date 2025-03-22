@@ -21,7 +21,7 @@ A Biblioteca Digital tem como objetivo fornecer acesso a materiais educacionais 
 ## 🚀 Como Rodar o Projeto
 ### Pré-requisitos
 Antes de iniciar, certifique-se de ter instalado:
-- Golang
+-- Golang
 - Gerenciador de pacotes (npm ou yarn para o frontend)
 - Banco de dados configurado
 
