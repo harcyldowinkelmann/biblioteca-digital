@@ -1,6 +1,6 @@
 package response
 
-import "ApiSup/internal/models"
+import "biblioteca-digital/internal/models"
 
 type Token struct {
 	Token   string         `json:"token"`

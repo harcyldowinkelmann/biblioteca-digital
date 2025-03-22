@@ -1,7 +1,7 @@
 package models
 
 import (
-	"ApiSup/pkg/mapear/constants"
+	"biblioteca-digital/pkg/mapear/constants"
 	"errors"
 
 	"golang.org/x/crypto/bcrypt"

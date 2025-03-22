@@ -1,10 +1,10 @@
 package routes
 
 import (
-	controller "ApiSup/internal/controllers"
-	"ApiSup/internal/middlewares"
-	"ApiSup/internal/repositories"
-	"ApiSup/internal/services"
+	controller "biblioteca-digital/internal/controllers"
+	"biblioteca-digital/internal/middlewares"
+	"biblioteca-digital/internal/repositories"
+	"biblioteca-digital/internal/services"
 
 	"github.com/labstack/echo/v4"
 )

@@ -1,9 +1,9 @@
 package middlewares
 
 import (
-	"ApiSup/pkg/hashing"
-	"ApiSup/pkg/mapear/constants"
-	"ApiSup/pkg/mapear/response"
+	"biblioteca-digital/pkg/hashing"
+	"biblioteca-digital/pkg/mapear/constants"
+	"biblioteca-digital/pkg/mapear/response"
 	"net/http"
 
 	echojwt "github.com/labstack/echo-jwt/v4"

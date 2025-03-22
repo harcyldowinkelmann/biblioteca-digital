@@ -1,8 +1,8 @@
 package config
 
 import (
-	"ApiSup/pkg/mapear/constants"
-	"ApiSup/pkg/mapear/response"
+	"biblioteca-digital/pkg/mapear/constants"
+	"biblioteca-digital/pkg/mapear/response"
 	"net/http"
 
 	"github.com/go-playground/validator/v10"

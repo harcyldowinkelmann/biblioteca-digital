@@ -1,4 +1,4 @@
-module ApiSup
+module biblioteca-digital
 
 go 1.22.0
 

@@ -1,7 +1,7 @@
 package config
 
 import (
-	"ApiSup/pkg/mapear/constants"
+	"biblioteca-digital/pkg/mapear/constants"
 	"fmt"
 	"log"
 	"os"

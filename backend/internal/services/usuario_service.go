@@ -1,11 +1,11 @@
 package services
 
 import (
-	"ApiSup/internal/models"
-	"ApiSup/internal/repositories"
-	"ApiSup/pkg/mapear/constants"
-	"ApiSup/pkg/mapear/request"
-	"ApiSup/pkg/pagination"
+	"biblioteca-digital/internal/models"
+	"biblioteca-digital/internal/repositories"
+	"biblioteca-digital/pkg/mapear/constants"
+	"biblioteca-digital/pkg/mapear/request"
+	"biblioteca-digital/pkg/pagination"
 	"errors"
 
 	"github.com/labstack/echo/v4"

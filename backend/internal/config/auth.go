@@ -1,8 +1,8 @@
 package config
 
 import (
-	"ApiSup/internal/models"
-	"ApiSup/pkg/hashing"
+	"biblioteca-digital/internal/models"
+	"biblioteca-digital/pkg/hashing"
 
 	"github.com/golang-jwt/jwt"
 )

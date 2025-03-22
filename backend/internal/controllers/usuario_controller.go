@@ -1,12 +1,12 @@
 package controllers
 
 import (
-	"ApiSup/internal/config"
-	"ApiSup/internal/models"
-	"ApiSup/internal/services"
-	"ApiSup/pkg/mapear/constants"
-	"ApiSup/pkg/mapear/request"
-	"ApiSup/pkg/mapear/response"
+	"biblioteca-digital/internal/config"
+	"biblioteca-digital/internal/models"
+	"biblioteca-digital/internal/services"
+	"biblioteca-digital/pkg/mapear/constants"
+	"biblioteca-digital/pkg/mapear/request"
+	"biblioteca-digital/pkg/mapear/response"
 	"net/http"
 	"strconv"
 

@@ -1,9 +1,9 @@
 package server
 
 import (
-	"ApiSup/internal/config"
-	"ApiSup/internal/middlewares"
-	"ApiSup/internal/routes"
+	"biblioteca-digital/internal/config"
+	"biblioteca-digital/internal/middlewares"
+	"biblioteca-digital/internal/routes"
 	"os"
 
 	"github.com/go-playground/validator/v10"

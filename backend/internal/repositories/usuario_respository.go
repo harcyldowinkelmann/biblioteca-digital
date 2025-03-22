@@ -1,9 +1,9 @@
 package repositories
 
 import (
-	"ApiSup/internal/config"
-	"ApiSup/internal/models"
-	"ApiSup/pkg/pagination"
+	"biblioteca-digital/internal/config"
+	"biblioteca-digital/internal/models"
+	"biblioteca-digital/pkg/pagination"
 
 	"github.com/labstack/echo/v4"
 	"gorm.io/gorm"

@@ -1,6 +1,6 @@
 package main
 
-import "ApiSup/pkg/server"
+import "biblioteca-digital/pkg/server"
 
 func main() {
 	server.Run()
