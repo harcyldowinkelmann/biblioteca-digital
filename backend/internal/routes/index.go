@@ -45,4 +45,21 @@ func InitializeRoutes(e *echo.Echo) {
 	 acao.PUT("/acao/:id", acaoController.Atualizar)
 	 acao.PATCH("/acao/:id", acaoController.Ativar)
 	 /// ---------------------------------------------------
+
+	 /**
+	 * Rotas para Gerenciamento dos tipos de Usuários cadastrados no sistema
+	 */
+	 tipoUsuarioRepo := repo.NovoTipoUsuarioRepository()
+	 tipoUsuarioService := servicesPublic.NovoTipoUsuarioService(tipoUsuarioRepo)
+	 tipoUsuarioController := controllerPublic.NovoTipoUsuarioController(tipoUsuarioService)
+ 
+	 tipoUsuario := e.Group("/tipo-usuario")
+	 tipoUsuario.Use(middlewares.VerifyTokenHandler())
+ 
+	 tipoUsuario.POST("/", tipoUsuarioController.Cadastrar)
+	 tipoUsuario.GET("/", tipoUsuarioController.BuscarUsuarios)
+	 tipoUsuario.GET("/tipo-usuario/:id", tipoUsuarioController.BuscarTipoUsuarioPorId)
+	 tipoUsuario.PUT("/tipo-usuario/:id", tipoUsuarioController.Atualizar)
+	 tipoUsuario.PATCH("/tipo-usuario/:id", tipoUsuarioController.Ativar)
+	 /// ---------------------------------------------------
 }
