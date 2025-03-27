@@ -2,7 +2,7 @@ package repositories
 
 import (
 	"biblioteca-digital/internal/config"
-	"biblioteca-digital/internal/models/public"
+	models "biblioteca-digital/internal/models/public"
 	"biblioteca-digital/pkg/pagination"
 
 	"github.com/labstack/echo/v4"

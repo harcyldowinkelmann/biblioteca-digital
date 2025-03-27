@@ -62,4 +62,22 @@ func InitializeRoutes(e *echo.Echo) {
 	 tipoUsuario.PUT("/tipo-usuario/:id", tipoUsuarioController.Atualizar)
 	 tipoUsuario.PATCH("/tipo-usuario/:id", tipoUsuarioController.Ativar)
 	 /// ---------------------------------------------------
+
+	 /**
+	 * Rotas para Gerenciamento dos tipos de Usuários cadastrados no sistema
+	 */
+	 tipoAssuntoRepo := repo.NovoAssuntoRepository()
+	 tipoAssuntoService := servicesPublic.NovoAssuntoService(tipoAssuntoRepo)
+	 tipoAssuntoController := controllerPublic.NovoAssuntoController(tipoAssuntoService)
+ 
+	 tipoAssunto := e.Group("/assunto")
+	 tipoAssunto.Use(middlewares.VerifyTokenHandler())
+ 
+	 tipoAssunto.POST("/", tipoAssuntoController.Cadastrar)
+	 tipoAssunto.GET("/", tipoAssuntoController.BuscarAssuntos)
+	 tipoAssunto.GET("/assunto/:id", tipoAssuntoController.BuscarAssuntoPorId)
+	 tipoAssunto.PUT("/assunto/:id", tipoAssuntoController.Atualizar)
+	 tipoAssunto.PATCH("/assunto/:id", tipoAssuntoController.Ativar)
+	 /// ---------------------------------------------------
+
 }
