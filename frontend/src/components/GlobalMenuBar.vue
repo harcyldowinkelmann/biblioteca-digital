@@ -1,7 +1,7 @@
 <template>
     <div class="global-menu-bar">
         <v-row align="center">
-            <v-col cols="2">
+            <v-col cols="1">
                 <v-img
                     alt="Biblioteca Digital"
                     :src="ImgMenuBar"
@@ -11,8 +11,23 @@
                 ></v-img>
             </v-col>
 
-            <v-col cols="8" align-self="auto">
+            <v-col cols="3" class="text-col">
                 <span class="text-menu-bar">BIBLIOTECA DIGITAL</span>
+            </v-col>
+
+            <!-- Barra de Pesquisa -->
+            <v-col cols="6">
+                <v-text-field
+                    type="text"
+                    variant="outlined"
+                    label="Pesquise algum material"
+                    prepend-inner-icon="mdi-magnify"
+                    hide-details
+                    single-line
+                    rounded="xl"
+                    base-color="white"
+                    color="#ffffff"
+                ></v-text-field>
             </v-col>
 
             <v-col cols="2">
@@ -23,8 +38,8 @@
                         <v-btn
                             color="primary"
                             v-bind="props"
-                        >
-                            Menu
+                        > 
+                            Menu 
                         </v-btn>
                     </template>
 
@@ -45,16 +60,16 @@
 
 <script>
 import ImgMenuBar from '@/assets/images/login/img-logo-menu-bar.png'
+import MenuImg from '@/assets/images/content/menu.png'
 
 export default {
     name: "GlobalMenuView",
     data: () => ({
         ImgMenuBar: ImgMenuBar,
+        MenuImg: MenuImg,
         items: [
-            { title: 'Click Me' },
-            { title: 'Click Me' },
-            { title: 'Click Me' },
-            { title: 'Click Me 2' },
+            { title: 'Minhas Mídias' },
+            { title: 'Suporte' }
         ]
     })
 }
@@ -88,11 +103,16 @@ nav a.router-link-exact-active {
     margin-left: 50px;
 }
 
+.text-col {
+    display: flex;
+    align-items: center; /* Alinha o texto verticalmente */
+}
+
 .text-menu-bar {
     color: white;
     font-size: large;
     font-weight: bolder;
-    align-items: start;
+    margin-left: 10px; /* Espaço entre o texto e a imagem */
 }
 
 </style>
