@@ -1,22 +1,18 @@
 <template>
-    <!--<nav>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
-    </nav>-->
     <div class="global-menu-bar">
         <v-row align="center">
             <v-col cols="2">
                 <v-img
-                        alt="Biblioteca Digital"
-                        :src="ImgMenuBar"
-                        transition="scale-transition"
-                        width="75"
-                        class="img-menu-bar"
+                    alt="Biblioteca Digital"
+                    :src="ImgMenuBar"
+                    transition="scale-transition"
+                    width="70"
+                    class="img-menu-bar"
                 ></v-img>
             </v-col>
 
             <v-col cols="8" align-self="auto">
-                <span class="text-menu-bar">BIBLIOTECA DIGITAL {{ items[0] }}</span>
+                <span class="text-menu-bar">BIBLIOTECA DIGITAL</span>
             </v-col>
 
             <v-col cols="2">
@@ -48,7 +44,7 @@
 </template>
 
 <script>
-import ImgMenuBar from '@/assets/images/login/book-menu-img.png'
+import ImgMenuBar from '@/assets/images/login/img-logo-menu-bar.png'
 
 export default {
     name: "GlobalMenuView",
@@ -66,21 +62,22 @@ export default {
 
 <style scoped>
 nav {
-  padding: 30px;
+    padding: 30px;
 }
 
 nav a {
-  font-weight: bold;
-  color: #2c3e50;
+    font-weight: bold;
+    color: #2c3e50;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+    color: #42b983;
 }
 
 .global-menu-bar {
-    background-color: rgb(4, 4, 29);
-    height: 75px;
+    background-color: #242424;
+    /*background-color: black;*/
+    height: 70px;
     width: 100%;
     position: absolute;
     margin-top: 35px;

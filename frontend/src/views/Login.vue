@@ -68,9 +68,7 @@
                 </v-card>
             </v-main>
         </div>
-        <div class="versaoSistema">
-            <span> Biblioteca Digital 2025 - Versão: <a class="link">{{ pack.version }} </a> | Projeto de Sistemas Computacionais II - UFGD | Copyright 2024 Todos os direitos reservados &copy;</span>
-        </div>
+        <FooterMain />
     </v-app>
   </template>
 
@@ -78,9 +76,11 @@
 <script>
 import personImg from '@/assets/images/login/person-img.png'
 import linkExterno from '@/assets/images/login/link-externo.jpg'
+import FooterMain from '@/components/FooterMain.vue';
 
 export default {
     name: "LoginView",
+    components: {FooterMain},
     data: () => ({
         pack: require('../../package.json'),
         personImg: personImg,
