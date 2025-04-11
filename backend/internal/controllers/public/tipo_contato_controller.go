@@ -12,32 +12,32 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-type AssuntoController struct {
-	service services.AssuntoService
+type TipoContatoController struct {
+	service services.TipoContatoService
 }
 
-func NovoAssuntoController(assuntoService services.AssuntoService) *AssuntoController {
-	return &AssuntoController{
-		service: assuntoService,
+func NovoTipoContatoController(tipoContatoService services.TipoContatoService) *TipoContatoController {
+	return &TipoContatoController{
+		service: tipoContatoService,
 	}
 }
 
-func (controller *AssuntoController) BuscarAssuntoPorId(c echo.Context) error {
+func (controller *TipoContatoController) BuscarTipoContatoPorId(c echo.Context) error {
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		return c.JSON(http.StatusBadRequest, response.Error{Message: constants.ID_NAO_INFORMADO, Description: err.Error()})
 	}
 
-	assunto, err := controller.service.BuscarAssuntoPorId(id)
+	tipoContato, err := controller.service.BuscarTipoContatoPorId(id)
 	if err != nil {
 		return c.JSON(http.StatusNotFound, response.Error{Message: constants.REGISTRO_NAO_ENCONTRADO, Description: err.Error()})
 	}
 
-	return c.JSON(http.StatusOK, assunto)
+	return c.JSON(http.StatusOK, tipoContato)
 }
 
-func (controller *AssuntoController) BuscarAssuntos(c echo.Context) error {
-	assunto, err := controller.service.BuscarAssuntos(c)
+func (controller *TipoContatoController) BuscarTiposContatos(c echo.Context) error {
+	assunto, err := controller.service.BuscarTiposContatos(c)
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, response.Error{Message: constants.ERRO_LISTAGEM_REGISTRO, Description: err.Error()})
 	}
@@ -45,47 +45,47 @@ func (controller *AssuntoController) BuscarAssuntos(c echo.Context) error {
 	return c.JSON(http.StatusOK, assunto)
 }
 
-func (controller *AssuntoController) Cadastrar(c echo.Context) error {
-	var assunto models.Assunto
-	if err := c.Bind(&assunto); err != nil {
+func (controller *TipoContatoController) Cadastrar(c echo.Context) error {
+	var tipoContato models.TipoContato
+	if err := c.Bind(&tipoContato); err != nil {
 		return c.JSON(http.StatusBadRequest, response.Error{Message: constants.BODY_FALHA, Description: err.Error()})
 	}
 
-	if err := c.Validate(assunto); err != nil {
+	if err := c.Validate(tipoContato); err != nil {
 		return config.ValidationErrors(c, err)
 	}
 
-	if err := controller.service.Cadastrar(&assunto); err != nil {
+	if err := controller.service.Cadastrar(&tipoContato); err != nil {
 		return c.JSON(http.StatusInternalServerError, response.Error{Message: constants.CADASTRO_FALHA_INSERCAO, Description: err.Error()})
 	}
 
 	return c.JSON(http.StatusCreated, response.Success{Message: constants.CADASTRO_REALIZADO})
 }
 
-func (controller *AssuntoController) Atualizar(c echo.Context) error {
+func (controller *TipoContatoController) Atualizar(c echo.Context) error {
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		return c.JSON(http.StatusBadRequest, response.Error{Message: constants.ID_NAO_INFORMADO, Description: err.Error()})
 	}
 
-	var assuntoAtualizar models.Assunto
-	if err := c.Bind(&assuntoAtualizar); err != nil {
+	var tipoContatoAtualizar models.TipoContato
+	if err := c.Bind(&tipoContatoAtualizar); err != nil {
 		return c.JSON(http.StatusBadRequest, response.Error{Message: constants.BODY_FALHA, Description: err.Error()})
 	}
 
-	if err := c.Validate(assuntoAtualizar); err != nil {
+	if err := c.Validate(tipoContatoAtualizar); err != nil {
 		return config.ValidationErrors(c, err)
 	}
 
-	assunto, err := controller.service.Atualizar(id, &assuntoAtualizar)
+	tipoContato, err := controller.service.Atualizar(id, &tipoContatoAtualizar)
 	if err != nil {
 		return c.JSON(http.StatusNotFound, response.Error{Message: constants.REGISTRO_NAO_ENCONTRADO, Description: err.Error()})
 	}
 
-	return c.JSON(http.StatusOK, response.SuccessBody{Message: constants.CADASTRO_ALTERADO, Body: assunto})
+	return c.JSON(http.StatusOK, response.SuccessBody{Message: constants.CADASTRO_ALTERADO, Body: tipoContato})
 }
 
-func (controller *AssuntoController) Ativar(c echo.Context) error {
+func (controller *TipoContatoController) Ativar(c echo.Context) error {
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		return c.JSON(http.StatusBadRequest, response.Error{Message: constants.ID_NAO_INFORMADO, Description: err.Error()})
