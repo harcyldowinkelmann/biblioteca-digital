@@ -6,15 +6,15 @@
             <div class="top-left">
               <h2>Recentes</h2>
             </div>
-            <div class="top-right">
-              <div class="filter-container">
-                <span>Filtrar</span>
-                <v-icon>mdi-filter</v-icon>
-              </div>
+                <div class="top-right">
+                    <div class="filter-container">
+                        <span>Filtrar</span>
+                        <v-icon color="white">mdi-filter</v-icon>
+                    </div>
+                </div>
             </div>
-          </div>
   
-          <div class="bottom-section">
+            <div class="bottom-section">
                 <div class="card" v-for="(book, index) in books" :key="index">
                     <div class="card-top">
                         <div class="card-left">
@@ -28,7 +28,7 @@
 
                         <div class="card-right">
                             <ul class="book-info">
-                                <li><v-icon>{{ book.icon }}</v-icon> <strong>{{ book.titulo }}</strong></li>
+                                <li><v-icon icon="mdi-home"></v-icon> <strong>{{ book.titulo }}</strong></li>
                                 <li><v-icon>{{ book.icon }}</v-icon> {{ book.publicacao }}</li>
                                 <li><v-icon>{{ book.icon }}</v-icon> Páginas: {{ book.paginas }}</li>
                                 <li><v-icon>{{ book.icon }}</v-icon> Capítulos: {{ book.capitulos }}</li>
