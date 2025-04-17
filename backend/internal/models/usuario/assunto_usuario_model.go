@@ -1,4 +1,4 @@
-package models
+package usuario
 
 import (
 	"biblioteca-digital/internal/models"

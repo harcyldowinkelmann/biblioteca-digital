@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"biblioteca-digital/internal/config"
-	"biblioteca-digital/internal/models/public"
-	services "biblioteca-digital/internal/services/public"
+	models "biblioteca-digital/internal/models/usuario"
+	services "biblioteca-digital/internal/services/usuario"
 	"biblioteca-digital/pkg/mapear/constants"
 	"biblioteca-digital/pkg/mapear/responses"
 	"net/http"

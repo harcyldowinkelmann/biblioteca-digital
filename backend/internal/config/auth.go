@@ -1,7 +1,7 @@
 package config
 
 import (
-	"biblioteca-digital/internal/models"
+	models "biblioteca-digital/internal/models/usuario"
 	"biblioteca-digital/pkg/hashing"
 
 	"github.com/golang-jwt/jwt"

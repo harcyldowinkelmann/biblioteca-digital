@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"biblioteca-digital/internal/config"
-	"biblioteca-digital/internal/models/public"
+	models "biblioteca-digital/internal/models/public"
 	services "biblioteca-digital/internal/services/public"
 	"biblioteca-digital/pkg/mapear/constants"
 	"biblioteca-digital/pkg/mapear/responses"

@@ -1,8 +1,8 @@
 package service
 
 import (
-	"biblioteca-digital/internal/models/public"
-	"biblioteca-digital/internal/repositories/public"
+	models "biblioteca-digital/internal/models/usuario"
+	"biblioteca-digital/internal/repositories/usuario"
 	"biblioteca-digital/pkg/pagination"
 
 	"github.com/labstack/echo/v4"

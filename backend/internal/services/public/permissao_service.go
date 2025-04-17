@@ -1,7 +1,7 @@
 package service
 
 import (
-	"biblioteca-digital/internal/models/public"
+	models "biblioteca-digital/internal/models/public"
 	"biblioteca-digital/internal/repositories/public"
 	"biblioteca-digital/pkg/pagination"
 
