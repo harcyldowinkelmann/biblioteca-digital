@@ -11,10 +11,12 @@ import (
 )
 
 type Permissao struct {
-	Descricao string   `json:"descricao" validate:"required"`
-	AcaoId    uint     `json:"acao_id" validate:"required" gorm:"not null"`
-	Acao      Acao     `gorm:"foreignKey:AcaoId;references:ID" json:"acao,omitempty"`
-	Ativo     bool     `json:"ativo" validate:"required"`
+	TipoUsuarioId 	uint	   		`json:"tipo_usuario_id" validate:"required"`
+	TipoUsuario		TipoUsuario		`gorm:"foreignKey:TipoUsuarioId;references:ID" json:"tipo_usuario,omitempty"`
+	Descricao 		string   		`json:"descricao" validate:"required"`
+	AcaoId    		uint     		`json:"acao_id" validate:"required" gorm:"not null"`
+	Acao      		Acao     		`gorm:"foreignKey:AcaoId;references:ID" json:"acao,omitempty"`
+	Ativo     		bool     		`json:"ativo" validate:"required"`
 	models.BaseModel
 }
 
