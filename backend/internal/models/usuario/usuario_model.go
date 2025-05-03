@@ -19,6 +19,7 @@ type Usuario struct {
 	ContatoId			uint 					`json:"contato_id" validate:"required"`
 	Contato				string					`gorm:"foreignKey:ContatoId;references:ID" json:"contato,omitempty"`
 	Nome				string 					`json:"nome" validate:"required"`
+	Cpf					string					`json:"cpf" validate:"required"`
 	DataNascimento		time.Time				`json:"data_nascimento" validate:"required"`
 	Nacionalidade		string 					`json:"nacionalidade" validate:"required"`
 	Senha				string 					`json:"senha" validate:"required"`
