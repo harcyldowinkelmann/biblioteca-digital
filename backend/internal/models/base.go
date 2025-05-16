@@ -15,7 +15,7 @@ type BaseModel struct {
 }
 
 func (model *BaseModel) BeforeCreate(tx *gorm.DB) error {
-	model.CreatedBy = "System" // Aqui você pode injetar do contexto depois
+	model.CreatedBy = "System"
 	return nil
 }
 
