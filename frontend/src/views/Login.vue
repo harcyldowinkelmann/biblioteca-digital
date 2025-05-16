@@ -85,7 +85,19 @@ export default {
         pack: require('../../package.json'),
         personImg: personImg,
         linkExterno: linkExterno
-    })
+    }),
+
+    methods: {
+        logar() {
+            const cpf = this.$refs.form.$el.querySelectorAll('input')[0].value;
+            const senha = this.$refs.form.$el.querySelectorAll('input')[1].value;
+
+            this.$router.push({
+                name: 'index',
+                query: {cpf, senha}
+            })
+        }
+    }
 }
 </script>
 

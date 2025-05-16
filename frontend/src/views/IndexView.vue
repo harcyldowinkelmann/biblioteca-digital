@@ -115,7 +115,13 @@ export default {
     bookImage: BookImage,
     bookImage2: BookImage2,
     bookImage3: BookImage3
-  })
+  }),
+
+  created() {
+    const {cpf, senha} = this.$route.query;
+    console.log('CPF recebido:', cpf);
+    console.log('Senha recebida:', senha);
+  }
 }
 </script>
 

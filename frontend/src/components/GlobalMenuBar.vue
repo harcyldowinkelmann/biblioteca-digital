@@ -33,6 +33,7 @@
             <v-col cols="2">
                 <v-menu
                     transition="scale-transition"
+                    v-if="visible"
                 >
                     <template v-slot:activator="{ props }">
                         <v-btn
@@ -48,6 +49,7 @@
                             v-for="(item, index) in items"
                             :key="index"
                             :value="index"
+                            @click="acao(item.title)"
                         >
                             <v-list-item-title>{{ item.title }}</v-list-item-title>
                         </v-list-item>
@@ -61,6 +63,7 @@
 <script>
 import ImgMenuBar from '@/assets/images/login/img-logo-menu-bar.png'
 import MenuImg from '@/assets/images/content/menu.png'
+import Swal from 'sweetalert2';
 
 export default {
     name: "GlobalMenuView",
@@ -69,9 +72,48 @@ export default {
         MenuImg: MenuImg,
         items: [
             { title: 'Minhas Mídias' },
-            { title: 'Suporte' }
-        ]
-    })
+            { title: 'Suporte' },
+            { title: 'Sair' }
+        ],
+        visible: true
+    }),
+    methods: {
+        async acao(data) {
+            if (data === 'Sair') {
+                const result = await Swal.fire({
+                    title: 'Tem certeza que deseja sair?',
+                    text: "Você precisará fazer login novamente.",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#00796B',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sim, sair',
+                    cancelButtonText: 'Cancelar'
+                });
+
+                if (result.isConfirmed) {
+                    // Redireciona para a página de login
+                    this.$router.push({ name: 'entrar' });
+
+                    Swal.fire({
+                        title: 'Desconectado!',
+                        text: 'Você foi deslogado com sucesso.',
+                        icon: 'success',
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+                }
+            }
+        }
+    },
+    watch: {
+        '$route.name': {
+            immediate: true,
+            handler(name) {
+                this.visible = name !== 'entrar';
+            }
+        }
+    }
 }
 </script>
 
@@ -114,5 +156,18 @@ nav a.router-link-exact-active {
     font-weight: bolder;
     margin-left: 10px; /* Espaço entre o texto e a imagem */
 }
+
+/* Botão de confirmação com texto branco */
+.swal2-confirm-custom {
+    color: white !important;
+    background-color: #3085d6 !important;
+}
+
+/* Botão de cancelamento com texto branco */
+.swal2-cancel-custom {
+    color: white !important;
+    background-color: #d33 !important;
+}
+
 
 </style>
