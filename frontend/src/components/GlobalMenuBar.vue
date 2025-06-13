@@ -44,16 +44,33 @@
                         </v-btn>
                     </template>
 
-                    <v-list>
-                        <v-list-item
-                            v-for="(item, index) in items"
-                            :key="index"
-                            :value="index"
-                            @click="acao(item.title)"
-                        >
-                            <v-list-item-title>{{ item.title }}</v-list-item-title>
-                        </v-list-item>
-                    </v-list>
+                    <div
+                        v-if="!homePage"
+                    >
+                        <v-list>
+                            <v-list-item
+                                v-for="(item, index) in index"
+                                :key="index"
+                                :value="index"
+                                @click="acao(item.title)"
+                            >
+                                <v-list-item-title>{{ item.title }}</v-list-item-title>
+                            </v-list-item>
+                        </v-list>
+                    </div>
+
+                    <div v-else>
+                        <v-list>
+                            <v-list-item
+                                v-for="(item, index) in home"
+                                :key="index"
+                                :value="index"
+                                @click="acao(item.title)"
+                            >
+                                <v-list-item-title>{{ item.title }}</v-list-item-title>
+                            </v-list-item>
+                        </v-list>
+                    </div>
                 </v-menu>
             </v-col>
         </v-row>
@@ -70,12 +87,16 @@ export default {
     data: () => ({
         ImgMenuBar: ImgMenuBar,
         MenuImg: MenuImg,
-        items: [
-            { title: 'Minhas Mídias' },
-            { title: 'Suporte' },
+        index: [
+            { title: 'Entrar'},
             { title: 'Sair' }
         ],
-        visible: true
+        home: [
+            { title: 'Minhas Mídias' },
+            { title: 'Suporte' }
+        ],
+        visible: true,
+        homePage: null
     }),
     methods: {
         async acao(data) {
@@ -112,6 +133,15 @@ export default {
             handler(name) {
                 this.visible = name !== 'entrar';
             }
+        }
+    },
+
+    mounted() {
+        console.log(this.$route.path)
+        if (this.$route.path == '/home') {
+            this.homePage = true;
+        } else {
+            this.homePage = false;
         }
     }
 }
