@@ -72,7 +72,6 @@
     </v-app>
   </template>
 
-
 <script>
 import personImg from '@/assets/images/login/person-img.png'
 import linkExterno from '@/assets/images/login/link-externo.jpg'
@@ -90,11 +89,10 @@ export default {
     methods: {
         logar() {
             const cpf = this.$refs.form.$el.querySelectorAll('input')[0].value;
-            const senha = this.$refs.form.$el.querySelectorAll('input')[1].value;
 
             this.$router.push({
-                name: 'index',
-                query: {cpf, senha}
+                name: 'home',
+                query: {cpf}
             })
         }
     }
