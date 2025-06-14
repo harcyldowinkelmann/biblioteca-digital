@@ -125,8 +125,14 @@ export default {
                     });
                 }
             }
+
+            if (data === 'Entrar') {
+                // Redireciona para a página de login
+                this.$router.push({ name: 'entrar' });
+            }
         }
     },
+
     watch: {
         '$route.name': {
             immediate: true,

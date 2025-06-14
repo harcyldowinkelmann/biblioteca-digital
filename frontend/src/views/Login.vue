@@ -61,7 +61,7 @@
                     </v-form>
 
                     <div class="nao-tenho-cadastro">
-                        <a href="#">
+                        <a :href="cadastro">
                             <span>🔗 - Não tenho cadastro</span>
                         </a>
                     </div>
